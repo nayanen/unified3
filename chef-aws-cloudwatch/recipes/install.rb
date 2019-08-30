@@ -35,13 +35,16 @@ end
 
 
 # install aws unified cloudwatch agent
-execute 'Install CloudWatch Agent' do
-   command "dpkg -i -E ./amazon-cloudwatch-agent.deb"
-   creates "#{node['aws_cloudwatch']['path']}/bin/amazon-cloudwatch-agent-ctl"
-   cwd '/tmp'
-end
+#execute 'Install CloudWatch Agent' do
+#   command "dpkg -i -E ./amazon-cloudwatch-agent.deb"
+#   creates "#{node['aws_cloudwatch']['path']}/bin/amazon-cloudwatch-agent-ctl"
+#   cwd '/tmp'
+#end
 
-# sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:configuration-file-path -s
+# install aws unified cloudwatch agent
+execute 'Install CloudWatch Agent' do
+   command "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:configuration-file-path -s"
+   
 
 # restart the agent service in the end to ensure that
 # the agent will run with the custom configurations
