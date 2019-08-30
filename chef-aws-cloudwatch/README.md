@@ -41,7 +41,7 @@ You can run some basic smoke tests with:
 
 ### Platform
 
-* Ubuntu 16.04
+* AL2
 
 ## Attributes
 
@@ -66,7 +66,3 @@ See `LICENSE` for more details.
 
 Amazon Web Services and AWS are trademarks of Amazon.com, Inc. or
 its affiliates in the United States and/or other countries.
-
-   [aws-cloudwatch-url]: https://aws.amazon.com/cloudwatch/
-   [license-badge]: https://img.shields.io/badge/license-mit-757575.svg?style=flat-square
-   [runtime-badge]: https://img.shields.io/badge/runtime-ruby-orange.svg?style=flat-square
