@@ -41,13 +41,13 @@ end
 #   cwd '/tmp'
 #end
 
-# install aws unified cloudwatch agent
-#execute 'Install CloudWatch Agent' do
-#   command "rpm -i ./amazon-cloudwatch-agent.rpm"
-#   creates "#{node['aws_cloudwatch']['path']}/bin/amazon-cloudwatch-agent-ctl"
-#   command "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:configuration-file-path -s"
-#   cwd '/tmp'
-#end
+ install aws unified cloudwatch agent
+execute 'Install CloudWatch Agent' do
+    command "rpm -i ./amazon-cloudwatch-agent.rpm"
+    creates "#{node['aws_cloudwatch']['path']}/bin/amazon-cloudwatch-agent-ctl"
+    command "sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:configuration-file-path -s"
+    cwd '/tmp'
+end
 
 # restart the agent service in the end to ensure that
 # the agent will run with the custom configurations
