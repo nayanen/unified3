@@ -41,7 +41,7 @@ end
 #   cwd '/tmp'
 #end
 
- install aws unified cloudwatch agent
+#install aws unified cloudwatch agent
 execute 'Install CloudWatch Agent' do
     command "rpm -i ./amazon-cloudwatch-agent.rpm"
     creates "#{node['aws_cloudwatch']['path']}/bin/amazon-cloudwatch-agent-ctl"
